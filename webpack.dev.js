@@ -5,9 +5,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     entry: './src/client/index.js',
-    devtool: 'source-map',
+    output: {
+        // path: path.join(__dirname, 'dist'),
+        // filename: 'bundle.min.js',
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     mode: 'development',
-    stats: 'verbose',
+    devtool: 'source-map',
     module: {
         rules: [
             {
